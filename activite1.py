@@ -10,7 +10,7 @@ naissance_liste = naissance_complete.split("/")
 actuelle_liste = actuelle_complete.split("/")
 
 # Calcule de l'age
-age_jour = int(actuelle_liste[0]) - int(naissance_liste[0])
+age_jour = int(actuelle_liste[0]) - int(naissance_liste[0]) - 1
 age_mois = int(actuelle_liste[1]) - int(naissance_liste[1]) + 12
 age_annee = int(actuelle_liste[2]) - int(naissance_liste[2])
 
