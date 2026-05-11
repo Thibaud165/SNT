@@ -1,0 +1,17 @@
+1)
+obtenir la date actuelle
+demander a l'utilisateur sa date de naissance
+verifier la syntaxe de la reponse donner
+decouper la date donner de l'utilisateur en une liste de 3 valeur avec jour mois annee
+faire pareil avec la date actuel
+soustraire chaque element des 2 liste ensmble :
+jour actuelle - jour naisance
+mois actuelle - mois naissance
+annee actuelle - annee naissance
+cela donnera l'age en jour mois et annee de l'utilisateur
+
+2)
+la question de la date de naissance de l'utilisateur
+les donnee recolter sur la date actuelle
+les info final comme l'age de l'utilisateur
+le traitement de la soustraction se l'age et date actuelle
