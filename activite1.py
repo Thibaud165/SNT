@@ -1,29 +1,52 @@
+import calendar
 import datetime
+
+
+def calculer_age(date_naissance, date_actuelle):
+  if date_naissance > date_actuelle:
+    return None
+
+  annees = date_actuelle.year - date_naissance.year
+  mois = date_actuelle.month - date_naissance.month
+  jours = date_actuelle.day - date_naissance.day
+
+  if jours < 0:
+    mois_precedent = date_actuelle.month - 1 or 12
+    annee_precedente = date_actuelle.year if date_actuelle.month > 1 else date_actuelle.year - 1
+    jours += calendar.monthrange(annee_precedente, mois_precedent)[1]
+    mois -= 1
+
+  if mois < 0:
+    mois += 12
+    annees -= 1
+
+  return annees, mois, jours
+
 
 print("Votre date de naissance (jour/mois/annee) :")
 naissance_complete = input(">>> ")
 print()
-print("Date actuelle (jour/mois/annee) :")
-actuelle_complete = datetime.datetime.now().strftime("%d/%m/%Y")
-print(">>>", actuelle_complete)
-print()
 
-# Decoupage des date en liste pour faire les calcules
-naissance_liste = naissance_complete.split("/")
-actuelle_liste = actuelle_complete.split("/")
+try:
+  naissance_date = datetime.datetime.strptime(naissance_complete, "%d/%m/%Y").date()
+except ValueError:
+  print("Erreur, format de date invalide")
+else:
+  actuelle_date = datetime.date.today()
+  actuelle_complete = actuelle_date.strftime("%d/%m/%Y")
 
-# Calcule de l'age
-age_jour = int(actuelle_liste[0]) - int(naissance_liste[0])
-age_mois = int(actuelle_liste[1]) - int(naissance_liste[1]) + 12
-age_annee = int(actuelle_liste[2]) - int(naissance_liste[2])
-
-# Verification
-if age_annee >= 0 and age_mois >= 0 and age_jour >= 0:
-  print("Vous avez :")
-  print(age_annee-1, "ans")
-  print(age_mois, "mois")
-  print(age_jour, "jours")
+  print("Date actuelle (jour/mois/annee) :")
+  print(">>>", actuelle_complete)
   print()
 
-else:
-  print("Erreur, age trop bas")
+  age = calculer_age(naissance_date, actuelle_date)
+
+  if age is None:
+    print("Erreur, la date de naissance est dans le futur")
+  else:
+    age_annee, age_mois, age_jour = age
+    print("Vous avez :")
+    print(age_annee, "ans")
+    print(age_mois, "mois")
+    print(age_jour, "jours")
+    print()
