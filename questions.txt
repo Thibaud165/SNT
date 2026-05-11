@@ -1,17 +1,19 @@
 1)
-obtenir la date actuelle
-demander a l'utilisateur sa date de naissance
-verifier la syntaxe de la reponse donner
-decouper la date donner de l'utilisateur en une liste de 3 valeur avec jour mois annee
-faire pareil avec la date actuel
-soustraire chaque element des 2 liste ensmble :
-jour actuelle - jour naisance
-mois actuelle - mois naissance
-annee actuelle - annee naissance
-cela donnera l'age en jour mois et annee de l'utilisateur
+Obtenir la date actuelle.
+Demander à l’utilisateur sa date de naissance.
+Vérifier la syntaxe de la réponse donnée.
+Découper la date donnée par l’utilisateur en une liste de 3 valeurs : jour, mois, année.
+Faire pareil avec la date actuelle.
+Soustraire chaque élément des deux listes ensemble :
+jour actuel - jour de naissance
+mois actuel - mois de naissance
+année actuelle - année de naissance
+Cela donnera l’âge de l’utilisateur en jours, mois et années.
 
 2)
-la question de la date de naissance de l'utilisateur
-les donnee recolter sur la date actuelle
-les info final comme l'age de l'utilisateur
-le traitement de la soustraction se l'age et date actuelle
+Dans le tableur, il y aura :
+
+- la date de naissance de l’utilisateur;
+- les données récupérées sur la date actuelle;
+- les informations finales comme l’âge de l’utilisateur;
+- le traitement de la soustraction entre la date actuelle et la date de naissance.
